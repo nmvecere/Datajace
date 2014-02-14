@@ -1,0 +1,44 @@
+.nav-bar {
+	background: #4798A0;
+	height: 44px;
+}
+
+.nav-bar h1 {
+	color: white;
+	margin: 0;
+	padding-top: 10px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 17px;
+	line-height: 21px;
+	margin: 0;
+    padding: 20px;
+}
+
+h1, p {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+.reset {
+    background: orange;
+    height: 44px;
+    margin: 0px;
+    padding: 0;
+    text-align: center;
+}
+
+.player {
+	color: white;
+	background: #1A5460;
+    height: 196px;
+    margin: 0;
+}
+
+#p-one {
+/*	transform: rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-webkit-transform:rotate(180deg);*/
+}

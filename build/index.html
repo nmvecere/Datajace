@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <html lang="en" manifest="cache.manifest"> -->
+
+<head>
+    <title>Datajace</title>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/add-to-home.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- IPHONE ICON -->
+    <link rel="apple-touch-icon" href="img/icon-57x57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="img/icon-114x114.png" sizes="114x114">
+    <!-- IPHONE SPLASH -->
+    <link
+        rel="apple-touch-startup-image"
+        href="img/startup-320x460.png"
+        media="(device-width: 320px)" >
+    <!-- IPHONE 4 SPLASH -->
+    <link
+        rel="apple-touch-startup-image"
+        href="img/startup-640x920.png"
+        media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2.0)" >
+    <!-- IPHONE 5 SPLASH -->
+    <link
+        rel="apple-touch-startup-image"
+        href="img/startup-640x1096.png"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2.0)" >
+</head>
+
+<body onload="pageSetup()">
+    <!-- PAGE CONTENT -->
+    <header>
+        <div class="nav-bar">
+            <h1>Life Counter</h1>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div class="player" id="p-one">
+            <h1>Player 1</h1>
+        </div>
+        <div class="reset">
+            <p>RESET</p>
+        </div>
+        <div class="player" id="p-two">
+            <h1>Player 2</h2>
+        </div>
+
+    </div>
+    <!-- JAVASCRIPT-->
+    <script src="js/refresh-manifest.js" type="text/javascript"></script>
+    <script>
+        // ADD TO HOME CUSTOMIZATION
+        var addToHomeConfig = {
+            touchIcon: true,
+            message: 'Want to install this app on your %device? Tap %icon and then <strong>Add to Home Screen</strong>.'
+        };
+    </script>
+    <script src="js/add-to-home.js" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
