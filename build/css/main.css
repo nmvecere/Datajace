@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .nav-bar {
 	background: #4798A0;
 	height: 44px;
@@ -22,12 +27,20 @@ h1, p {
     -webkit-margin-after: 0;
 }
 
-.reset {
-    background: orange;
+.divider {
+    background: #195360 url(../img/iphone-divider.svg) no-repeat center;
     height: 44px;
-    margin: 0px;
+    margin: 0;
     padding: 0;
     text-align: center;
+    width: 320px;
+}
+
+#reset-button {
+    background: url(../img/iphone-reset-button.svg);
+    border: none;
+    height: 44px;
+    width: 44px;
 }
 
 .player {
