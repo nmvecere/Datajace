@@ -2,8 +2,6 @@
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-bar {
@@ -12,31 +10,27 @@ body {
 }
 
 .nav-bar h1 {
-	color: white;
 	margin: 0;
 	padding-top: 10px;
 	text-align: center;
 }
 
 h1 {
+    color: white;
     font-size: 18px;
     font-weight: 400;
 	line-height: 21px;
-	margin: 0;
     padding: 20px;
 }
 
 .divider {
-    background: #195360 url(../img/iphone-divider.svg) no-repeat center;
+    background: #195360 url(../img/iphone-divider.svg) repeat-x center;
     height: 30px;
-    margin: 0;
-    padding: 0;
     text-align: center;
-    width: 320px;
 }
 
 #reset-button {
-    /* Change to 30x30 & add alert */
+    /* Add alert */
     background: url(../img/iphone-reset-button.svg) no-repeat center;
     border: none;
     height: 30px;
@@ -47,14 +41,13 @@ h1 {
 	color: white;
 	background: #1A5460;
     height: 203px;
-    margin: 0;
 }
 
 .player h1 {
     border-bottom: 1px solid #67b0cc;
     display: inline-block;
     font-weight: 300;
-    margin-left: 20px;
+    margin: -5px 0 0 20px;
     padding-bottom: 5px;
     text-indent: -20px;
     width: 240px;
@@ -65,73 +58,31 @@ h1 {
 	transform: rotate(180deg);
 	-ms-transform:rotate(180deg);
 	-webkit-transform:rotate(180deg);
-    CHANGE PADDING TO 20px ^ // 17 PX v ON SWAP
 */
 }
 
-#player-one h1 {
-    margin-top: -5px;
-}
-
-#player-two h1 {
-    margin-top: -7px;
-}
-
-.counter-container {
+.counter-container, .label-container {
     color: #60a3c5;
-    font-size: 25pt;
+    font-size: 32px;
     font-weight: 300;
     margin: 20px 20px;
     text-align: center;
     width: 300px;
 }
 
-.general-counter {
-    border-bottom: 1px solid #60a3c5;;
+.general-counter, .life-counter, .poison-counter, .general-label, .life-label, .poison-label {
     float: left;
     margin: 0 20px;
     width: 17.8%;
 }
 
-.life-counter {
+.general-counter, .life-counter, .poison-counter {
     border-bottom: 1px solid #60a3c5;
-    float: left;
-    margin: 0 20px;
-    width: 17.8%;
-}
-
-.poison-counter {
-    border-bottom: 1px solid #60a3c5;
-    float: left;
-    margin: 0 20px;
-    width: 17.8%;
 }
 
 .label-container {
     clear: both;
-    color: #60a3c5;
     font-size: 16px;
-    font-weight: 300;
-    margin: 20px 20px;
-    width: 300px;
-}
-
-.general-label {
-    float: left;
-    margin: 0 20px;
-    width: 17.8%;
-}
-
-.life-label {
-    float: left;
-    margin: 0 20px;
-    width: 17.8%;
-}
-
-.poison-label {
-    float: left;
-    margin: 0 20px;
-    width: 17.8%;
 }
 
 .button-container {
@@ -140,17 +91,16 @@ h1 {
 }
 
 .add-button, .subtract-button {
-    margin: 0 20px;
+    border: none;
     height: 44px;
+    margin: 0 20px;
     width: 44px;
 }
 
 .subtract-button {
     background: url(../img/subtract-button.svg);
-    border: none;
 }
 
 .add-button {
     background: url(../img/add-button.svg);
-    border: none;
 }
