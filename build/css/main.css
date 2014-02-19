@@ -39,8 +39,9 @@ h1 {
     /* Change to 30x30 & add alert */
     background: url(../img/iphone-reset-button.svg);
     border: none;
-    height: 44px;
-    width: 44px;
+    height: 30px;
+    margin-top: 7px;
+    width: 30px;
 }
 
 .player {
