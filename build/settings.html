@@ -10,6 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/switchery.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -19,13 +20,13 @@
         <header>
             <div class="nav-bar">
                 <h1>Settings</h1>
-                <button type="button" name="back-button" id="back-button" onclick="changePage('index.html')"></button>
+                <button type="button" name="back-button" class="back-button" onclick="changePage('index.html')"></button>
             </div>
         </header>
         <div class="setting-label">Display</div>
-        <div class="setting-option">General Counter</div><button type="button" class="settings-option-button"></button>
-        <div class="setting-option">Poison Counter</div><button type="button" class="settings-option-button"></button>
-        <div class="setting-option">Mirror Mode</div><button type="button" class="settings-option-button"></button>
+        <div class="setting-option">General Counter</div><input type="checkbox" class="js-switch" checked />
+        <div class="setting-option">Poison Counter</div><input type="checkbox" class="js-switch" checked />
+        <div class="setting-option">Mirror Mode</div><input type="checkbox" class="js-switch" checked />
     </div>
     <div class="landscape-wrapper">
         <header>
@@ -40,14 +41,7 @@
         </div>
     </div>
     <!-- JAVASCRIPT-->
-    <script src="js/refresh-manifest.js" type="text/javascript"></script>
-    <script>
-        // ADD TO HOME CUSTOMIZATION
-        var addToHomeConfig = {
-            touchIcon: true,
-            message: 'Want to install this app on your %device? Tap %icon and then <strong>Add to Home Screen</strong>.'
-        };
-    </script>
+    <script src="js/switchery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
