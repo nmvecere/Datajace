@@ -19,12 +19,12 @@
         display: block;
         font-size: 20px;
         font-weight: 600;
-        height: 276px;
+        height: 256px;
         padding: 0;
         text-align: center;
     }
     .orientation-notice img {
-        height: 200px;
+        height: 180px;
         padding-top: 10px;
     }
 }
@@ -70,7 +70,7 @@ h1 {
 .player {
 	color: #ecf0f1;
 	background: #ecf0f1;
-    height: 202.5px;
+    height: 192.5px;
 }
 
 .player h1 {
@@ -89,6 +89,11 @@ h1 {
 	-ms-transform:rotate(180deg);
 	-webkit-transform:rotate(180deg);
 */
+}
+
+#player-two {
+    margin-top: -10px;
+    padding-bottom: 10px;
 }
 
 .counter-container, .label-container {
@@ -156,13 +161,14 @@ h1 {
 
 .settings-wrapper {
     background: #ecf0f1;
-    height: 435px;
+    height: 415px;
 }
 
 .setting-label {
     color: #3498db;
-    font-weight: 600;
-    padding: 10px 20px 10px 20px;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 15px 20px 10px 20px;
 }
 
 .setting-option {
