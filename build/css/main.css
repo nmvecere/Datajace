@@ -105,9 +105,17 @@ h1 {
     width: 300px;
 }
 
-.general-counter, .life-counter, .poison-counter, .general-label, .life-label, .poison-label {
+.general-counter, .life-counter, .poison-counter {
     float: left;
     margin: 0 20px;
+    text-align: center;
+    width: 17.8%;
+}
+
+.general-label, .life-label, .poison-label {
+    float: left;
+    margin: 0 20px;
+    text-align: left;
     width: 17.8%;
 }
 
