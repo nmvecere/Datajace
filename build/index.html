@@ -35,13 +35,13 @@
 
 <body onload="pageSetup()">
     <!-- PAGE CONTENT -->
-    <header>
-        <div class="nav-bar">
-            <h1>Datajace</h1>
-            <button type="button" name="settings-button" id="settings-button" onclick="changePage('settings.html')"></button>
-        </div>
-    </header>
     <div class="counter-wrapper">
+        <header>
+            <div class="nav-bar">
+                <h1>Datajace</h1>
+                <button type="button" name="settings-button" id="settings-button" onclick="changePage('settings.html')"></button>
+            </div>
+        </header>
         <div class="player" id="player-one">
             <h1>Player 1</h1>
             <div class="counter-container">
@@ -80,10 +80,17 @@
             </div>
         </div>
     </div>
-    <div class="orientation-notice">
-        <img src="img/app-logo.png" /><br />
-        "Clear your mind of idle thoughts... <br />
-        And rotate to portrait mode."
+    <div class="landscape-wrapper">
+        <header>
+            <div class="nav-bar">
+                <h1>Datajace</h1>
+            </div>
+        </header>
+        <div class="orientation-notice">
+            <img src="img/app-logo.png" /><br />
+            "Clear your mind of idle thoughts... <br />
+            And rotate to portrait mode."
+        </div>
     </div>
     <!-- JAVASCRIPT-->
     <script src="js/refresh-manifest.js" type="text/javascript"></script>

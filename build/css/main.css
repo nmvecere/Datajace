@@ -4,7 +4,7 @@
     .counter-wrapper, .settings-wrapper {
         display: block;
     }
-    .orientation-notice {
+    .landscape-wrapper {
         display: none;
     }
 }
@@ -23,7 +23,7 @@
         padding: 0;
         text-align: center;
     }
-    .orientation-notice img {
+    .landscape-wrapper img {
         height: 180px;
         padding-top: 10px;
     }
