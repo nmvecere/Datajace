@@ -70,23 +70,27 @@ h1 {
 .player {
 	color: #ecf0f1;
 	background: #ecf0f1;
-    height: 192.5px;
+    height: 194px;
 }
 
 .player-name {
     background: none;
     border: none;
+    border-radius: 0;
     border-bottom: 1px solid #bdc3c7;
     color: #3498db;
     display: inline-block;
     font-size: 18px;
     font-weight: 300;
     margin-left: 15px;
-    padding: 15px 15px 0px 0px;
+    margin-top: 15px;
+    padding: 0 15px 0 0px;
     width: 275px;
+    -webkit-appearance: none;
 }
 
 textarea:focus, input:focus {
+    border-radius: 0;
     outline: 0;
 }
 
