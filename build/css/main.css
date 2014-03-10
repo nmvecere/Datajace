@@ -46,7 +46,6 @@ body {
 }
 
 h1 {
-    color: #3498db;
     font-size: 18px;
     font-weight: 600;
 	line-height: 21px;
@@ -81,7 +80,7 @@ h1 {
     color: #3498db;
     display: inline-block;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 600;
     margin-left: 15px;
     margin-top: 15px;
     padding: 0 15px 0 0px;
@@ -92,6 +91,10 @@ h1 {
 textarea:focus, input:focus {
     border-radius: 0;
     outline: 0;
+}
+
+input {
+    font-family: 'Source Sans Pro';
 }
 
 #player-one {
@@ -107,7 +110,7 @@ textarea:focus, input:focus {
     padding-bottom: 10px;
 }
 
-.counter-container, .label-container {
+.counter-container {
     color: #3498db;
     font-size: 32px;
     font-weight: 300;
@@ -116,22 +119,21 @@ textarea:focus, input:focus {
     width: 310px;
 }
 
-.general-counter, .life-counter, .poison-counter {
+.counter {
+    color: #bdc3c7;
     float: left;
     margin: 0 20px;
     text-align: center;
     width: 17.8%;
 }
 
-.general-label, .life-label, .poison-label {
-    float: left;
-    margin: 0 20px;
+.label {
+    border-top: 1px solid #bdc3c7;
+    color: #bdc3c7;
+    font-size: 18px;
+    margin: 0 20px 15px 0px;
     text-align: left;
-    width: 17.8%;
-}
-
-.general-counter, .life-counter, .poison-counter {
-    border-bottom: 1px solid #bdc3c7;
+    width: 60px;
 }
 
 .label-container {
@@ -211,3 +213,13 @@ textarea:focus, input:focus {
     float: right;
     margin: -37px 15px 0px 0px;
 }
+
+.active {
+    color: #3498db;
+    font-weight: 600;
+}
+
+/*.active ~ .life-label {
+    color: #3498db;
+    font-weight: 400;
+}*/
