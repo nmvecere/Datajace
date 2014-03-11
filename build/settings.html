@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="pageSetup()">
+<body>
     <!-- PAGE CONTENT -->
     <div class="settings-wrapper">
         <header>
@@ -24,9 +24,9 @@
             </div>
         </header>
         <div class="setting-label">Display</div>
-        <div class="setting-option">General Counter</div><input type="checkbox" class="js-switch" checked />
-        <div class="setting-option">Poison Counter</div><input type="checkbox" class="js-switch" checked />
-        <div class="setting-option">Mirror Mode</div><input type="checkbox" class="js-switch" checked />
+        <div class="setting-option">General Counter</div><input type="checkbox" class="general-setting js-switch js-check-change" checked />
+        <div class="setting-option">Poison Counter</div><input type="checkbox" class="poison-setting js-switch js-check-change" checked />
+        <div class="setting-option">Mirror Mode</div><input type="checkbox" class="mirror-setting js-switch js-check-change" />
     </div>
     <div class="landscape-wrapper">
         <header>
@@ -41,6 +41,8 @@
         </div>
     </div>
     <!-- JAVASCRIPT-->
+    <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile.custom.min.js" type="text/javascript"></script>
     <script src="js/switchery.min.js"></script>
     <script src="js/main.js"></script>
 </body>

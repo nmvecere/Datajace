@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900);
 
-@media only screen and (orientation: portrait) {
+@media only screen and (max-width: 320px) {
     .counter-wrapper, .settings-wrapper {
         display: block;
     }
@@ -9,7 +9,7 @@
     }
 }
 
-@media only screen and (orientation: landscape) {
+@media only screen and (min-width: 321px) {
     .counter-wrapper, .settings-wrapper {
         display: none;
     }
@@ -58,7 +58,7 @@ h1 {
     text-align: center;
 }
 
-#reset-button {
+.reset-button {
     /* Add alert */
     background: url(../img/iphone-reset-button.svg) no-repeat center;
     border: none;
@@ -223,3 +223,34 @@ input {
     color: #3498db;
     font-weight: 400;
 }*/
+
+div#jqt .reveal.in {
+    -webkit-animation-name: dontmove;
+    z-index: 0;
+}
+
+div#jqt .reveal.out {
+    -webkit-animation-name: revealout;
+    z-index: 10;
+}
+
+div#jqt .reveal.out.reverse {
+    z-index: 0;
+    -webkit-animation-name: dontmove;
+}
+
+div#jqt .reveal.in.reverse {
+    z-index: 10;
+    -webkit-animation-name: revealin;
+}
+
+
+@-webkit-keyframes revealin {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(0); }
+}
+
+@-webkit-keyframes revealout {
+    from { -webkit-transform: translateX(0); }
+    to { -webkit-transform: translateX(100%); }
+}
