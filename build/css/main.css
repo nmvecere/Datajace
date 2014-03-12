@@ -29,6 +29,11 @@
     }
 }
 
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+}
+
 body {
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -95,6 +100,7 @@ textarea:focus, input:focus {
 
 input {
     font-family: 'Source Sans Pro';
+    -webkit-user-select: auto !important;
 }
 
 #player-one {
@@ -217,40 +223,4 @@ input {
 .active {
     color: #3498db;
     font-weight: 600;
-}
-
-/*.active ~ .life-label {
-    color: #3498db;
-    font-weight: 400;
-}*/
-
-div#jqt .reveal.in {
-    -webkit-animation-name: dontmove;
-    z-index: 0;
-}
-
-div#jqt .reveal.out {
-    -webkit-animation-name: revealout;
-    z-index: 10;
-}
-
-div#jqt .reveal.out.reverse {
-    z-index: 0;
-    -webkit-animation-name: dontmove;
-}
-
-div#jqt .reveal.in.reverse {
-    z-index: 10;
-    -webkit-animation-name: revealin;
-}
-
-
-@-webkit-keyframes revealin {
-    from { -webkit-transform: translateX(100%); }
-    to { -webkit-transform: translateX(0); }
-}
-
-@-webkit-keyframes revealout {
-    from { -webkit-transform: translateX(0); }
-    to { -webkit-transform: translateX(100%); }
 }
