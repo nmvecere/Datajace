@@ -2,31 +2,53 @@
 //IF NOT, SET THEM
 //IF SO, RETRIEVE THEM
 function pageSetup() {
-    if (typeof localStorage.getItem('playerTwoLife') !== 'undefined' && localStorage !== null) {
+    if (window.localStorage.getItem('playerOneLife') !== null && window.localStorage !== null) {
+        console.log("1");
         var playerOneLife = localStorage.getItem('playerOneLife');
         $('.playerOneLifeNum').html(playerOneLife);
+    } else {
+        localStorage.setItem('playerOneLife', 20);
+        $('.playerOneLifeNum').html(20);
+    }
 
+    if (window.localStorage.getItem('playerOneGeneral') !== null && window.localStorage !== null) {
         var playerOneGeneral = localStorage.getItem('playerOneGeneral');
         $('.playerOneGeneralNum').html(playerOneGeneral);
+    } else {
+        localStorage.setItem('playerOneGeneral', 0);
+        $('.playerOneGeneralNum').html(0);
+    }
 
+    if (window.localStorage.getItem('playerOnePoison') !== null && window.localStorage !== null) {
         var playerOnePoison = localStorage.getItem('playerOnePoison');
         $('.playerOnePoisonNum').html(playerOnePoison);
+    } else {
+        localStorage.setItem('playerOnePoison', 0);
+        $('.playerOnePoisonNum').html(0);
+    }
 
+    if (window.localStorage.getItem('playerTwoLife') !== null && window.localStorage !== null) {
         var playerTwoLife = localStorage.getItem('playerTwoLife');
         $('.playerTwoLifeNum').html(playerTwoLife);
+    } else {
+        localStorage.setItem('playerTwoLife', 20);
+        $('.playerTwoLifeNum').html(20);
+    }
 
+    if (window.localStorage.getItem('playerTwoGeneral') !== null && window.localStorage !== null) {
         var playerTwoGeneral = localStorage.getItem('playerTwoGeneral');
         $('.playerTwoGeneralNum').html(playerTwoGeneral);
+    } else {
+        localStorage.setItem('playerTwoGeneral', 0);
+        $('.playerTwoGeneralNum').html(0);
+    }
 
+    if (window.localStorage.getItem('playerTwoPoison') !== null && window.localStorage !== null) {
         var playerTwoPoison = localStorage.getItem('playerTwoPoison');
         $('.playerTwoPoisonNum').html(playerTwoPoison);
     } else {
-        localStorage.setItem('playerOneLife', 20);
-        localStorage.setItem('playerOneGeneral', 0);
-        localStorage.setItem('playerOnePoison', 0);
-        localStorage.setItem('playerTwoLife', 20);
-        localStorage.setItem('playerTwoGeneral', 0);
         localStorage.setItem('playerTwoPoison', 0);
+        $('.playerTwoPoisonNum').html(0);
     }
 }
 
