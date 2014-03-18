@@ -2,118 +2,118 @@
 <html lang="en">
 <!-- <html lang="en" manifest="cache.manifest"> -->
 
-<head>
-    <title>Datajace</title>
-    <!-- META -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css">
-    <link rel="stylesheet" href="css/add-to-home.css">
-    <link rel="stylesheet" href="css/main.css">
-    <!-- IPHONE ICON -->
-    <link rel="apple-touch-icon" href="img/icon-57x57.png" sizes="57x57">
-    <link rel="apple-touch-icon" href="img/icon-114x114.png" sizes="114x114">
-    <!-- IPHONE SPLASH -->
-    <link
-        rel="apple-touch-startup-image"
-        href="img/startup-320x460.png"
-        media="(device-width: 320px)" >
-    <!-- IPHONE 4 SPLASH -->
-    <link
-        rel="apple-touch-startup-image"
-        href="img/startup-640x920.png"
-        media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2.0)" >
-    <!-- IPHONE 5 SPLASH -->
-    <link
-        rel="apple-touch-startup-image"
-        href="img/startup-640x1096.png"
-        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2.0)" >
-</head>
+    <head>
+        <title>Datajace</title>
+        <!-- META -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css">
+        <link rel="stylesheet" href="css/add-to-home.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- IPHONE ICON -->
+        <link rel="apple-touch-icon" href="img/icon-57x57.png" sizes="57x57">
+        <link rel="apple-touch-icon" href="img/icon-114x114.png" sizes="114x114">
+        <!-- IPHONE SPLASH -->
+        <link
+            rel="apple-touch-startup-image"
+            href="img/startup-320x460.png"
+            media="(device-width: 320px)" >
+        <!-- IPHONE 4 SPLASH -->
+        <link
+            rel="apple-touch-startup-image"
+            href="img/startup-640x920.png"
+            media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2.0)" >
+        <!-- IPHONE 5 SPLASH -->
+        <link
+            rel="apple-touch-startup-image"
+            href="img/startup-640x1096.png"
+            media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2.0)" >
+    </head>
 
-<body onload="pageSetup()">
-    <!-- PAGE CONTENT -->
-    <div class="counter-wrapper">
-        <header>
-            <div class="nav-bar">
-                <h1>Datajace</h1>
-                <button type="button" name="settings-button" class="settings-button" onclick="changePage('settings.html')"></button>
+    <body onload="pageSetup()">
+        <!-- PAGE CONTENT -->
+        <div class="counter-wrapper">
+            <header>
+                <div class="nav-bar">
+                    <h1>Datajace</h1>
+                    <button type="button" name="settings-button" class="settings-button" onclick="changePage('settings.html')"></button>
+                </div>
+            </header>
+            <div class="player player-one">
+                <input type="text" name="player-name" placeholder="Player 1" class="player-name"></input>
+                <div class="counter-container">
+                    <div class="counter" id="playerOneGeneral">
+                        <div class="playerOneGeneralNum"></div>
+                        <div class="label">General</div>
+                    </div>
+                    <div class="counter" id="playerOneLife">
+                        <div class="playerOneLifeNum"></div>
+                        <div class="label">Life</div>
+                    </div>
+                    <div class="counter" id="playerOnePoison">
+                        <div class="playerOnePoisonNum"></div>
+                        <div class="label">Poison</div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="add-button" id="playerOneAdd"></button>
+                    <button type="button" class="subtract-button" id="playerOneSub"></button>
+                </div>
             </div>
-        </header>
-        <div class="player" id="player-one">
-            <input type="text" name="player-name" placeholder="Player 1" class="player-name"></input>
-            <div class="counter-container">
-                <div class="counter" id="playerOneGeneral">
-                    <div class="playerOneGeneralNum"></div>
-                    <div class="label">General</div>
-                </div>
-                <div class="counter" id="playerOneLife">
-                    <div class="playerOneLifeNum"></div>
-                    <div class="label">Life</div>
-                </div>
-                <div class="counter" id="playerOnePoison">
-                    <div class="playerOnePoisonNum"></div>
-                    <div class="label">Poison</div>
-                </div>
+            <div class="divider">
+                <button type="button" id="resetButton" class="reset-button"></button>
             </div>
-            <div class="button-container">
-                <button type="button" class="add-button" id="playerOneAdd"></button>
-                <button type="button" class="subtract-button" id="playerOneSub"></button>
+            <div class="player" id="player-two">
+                <input type="text" name="player-name" placeholder="Player 2" class="player-name"></input>
+                <div class="counter-container">
+                    <div class="counter" id="playerTwoGeneral">
+                        <div class="playerTwoGeneralNum"></div>
+                        <div class="label">General</div>
+                    </div>
+                    <div class="counter" id="playerTwoLife">
+                        <div class="playerTwoLifeNum"></div>
+                        <div class="label">Life</div>
+                    </div>
+                    <div class="counter" id="playerTwoPoison">
+                        <div class="playerTwoPoisonNum"></div>
+                        <div class="label">Poison</div>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="add-button" id="playerTwoAdd"></button>
+                    <button type="button" class="subtract-button" id="playerTwoSub"></button>
+                </div>
             </div>
         </div>
-        <div class="divider">
-            <button type="button" id="resetButton" class="reset-button"></button>
-        </div>
-        <div class="player" id="player-two">
-            <input type="text" name="player-name" placeholder="Player 2" class="player-name"></input>
-            <div class="counter-container">
-                <div class="counter" id="playerTwoGeneral">
-                    <div class="playerTwoGeneralNum"></div>
-                    <div class="label">General</div>
+        <div class="landscape-wrapper">
+            <header>
+                <div class="nav-bar">
+                    <h1>Datajace</h1>
                 </div>
-                <div class="counter" id="playerTwoLife">
-                    <div class="playerTwoLifeNum"></div>
-                    <div class="label">Life</div>
-                </div>
-                <div class="counter" id="playerTwoPoison">
-                    <div class="playerTwoPoisonNum"></div>
-                    <div class="label">Poison</div>
-                </div>
-            </div>
-            <div class="button-container">
-                <button type="button" class="add-button" id="playerTwoAdd"></button>
-                <button type="button" class="subtract-button" id="playerTwoSub"></button>
+            </header>
+            <div class="orientation-notice">
+                <img src="img/app-logo.png" /><br />
+                "Clear your mind of idle thoughts... <br />
+                And rotate to portrait mode."
             </div>
         </div>
-    </div>
-    <div class="landscape-wrapper">
-        <header>
-            <div class="nav-bar">
-                <h1>Datajace</h1>
-            </div>
-        </header>
-        <div class="orientation-notice">
-            <img src="img/app-logo.png" /><br />
-            "Clear your mind of idle thoughts... <br />
-            And rotate to portrait mode."
-        </div>
-    </div>
-    <!-- JAVASCRIPT-->
-    <script src="js/refresh-manifest.js" type="text/javascript"></script>
-    <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
-    <script src="js/jquery.mobile.custom.min.js" type="text/javascript"></script>
-    <script>
-        // ADD TO HOME CUSTOMIZATION
-        var addToHomeConfig = {
-            touchIcon: true,
-            message: 'Want to install this app on your %device? Tap %icon and then <strong>Add to Home Screen</strong>.'
-        };
-    </script>
-    <script src="js/add-to-home.js" type="text/javascript"></script>
-    <script src="js/main.js"></script>
-</body>
+        <!-- JAVASCRIPT-->
+        <script src="js/refresh-manifest.js" type="text/javascript"></script>
+        <script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+        <script src="js/jquery.mobile.custom.min.js" type="text/javascript"></script>
+        <script>
+            // ADD TO HOME CUSTOMIZATION
+            var addToHomeConfig = {
+                touchIcon: true,
+                message: 'Want to install this app on your %device? Tap %icon and then <strong>Add to Home Screen</strong>.'
+            };
+        </script>
+        <script src="js/add-to-home.js" type="text/javascript"></script>
+        <script src="js/main.js"></script>
+    </body>
 
 </html>

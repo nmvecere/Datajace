@@ -1,9 +1,7 @@
-//CHECK IF LOCALSTORAGE VARIABLES ARE SET
-//IF NOT, SET THEM
-//IF SO, RETRIEVE THEM
+// Check if local storage variables are set.
+// If not, set them.
 function pageSetup() {
     if (window.localStorage.getItem('playerOneLife') !== null && window.localStorage !== null) {
-        console.log("1");
         var playerOneLife = localStorage.getItem('playerOneLife');
         $('.playerOneLifeNum').html(playerOneLife);
     } else {
@@ -50,6 +48,13 @@ function pageSetup() {
         localStorage.setItem('playerTwoPoison', 0);
         $('.playerTwoPoisonNum').html(0);
     }
+
+    // MAKE CHANGES BASED ON SETTINGS
+    if ($('#mirror').is(':checked')) {
+        localStorage.setItem('mirrorSetting', true);
+    } else {
+        localStorage.setItem('mirrorSetting', false);
+    };
 }
 
 // Define function to change page.
@@ -57,53 +62,55 @@ function changePage(page) {
     location.href = page;
 }
 
-$(document).ready(function () {
+// Call functions when page loads.
+$(document).ready(function() {
 
-    // Test Switchery.
-    var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+    // SAVE SETTINGS
+    var settingList = (localStorage["settingList"]) ? JSON.parse(localStorage["settingList"]) : [];
 
-    elems.forEach(function (html) {
-        var switchery = new Switchery(html, {
-            color: '#41b7f1'
-        });
+    $("input[type='checkbox']").each(function() {
+        if ($.inArray($(this).attr('id'), settingList) >= 0) {
+            $(this).attr('checked', true);
+        }
     });
 
-    // SETTINGS TEST
+    $("input[type='checkbox']").change(function() {
 
-    var generalSetting = document.querySelector('.general-setting');
-    var poisonSetting = document.querySelector('.poison-setting');
-    var mirrorSetting = document.querySelector('.mirror-setting');
+        var settingIDs = $("input:checkbox:checked").map(function() {
+            return $(this).val();
+        }).get();
 
-    //generalSetting.onchange = function() {
-    //    localStorage.setItem('generalSetting', generalSetting.checked);
-    //    console.log(localStorage.getItem('generalSetting'));
-    //};
-    //    
-    //poisonSetting.onchange = function() {
-    //    localStorage.setItem('poisonSetting', poisonSetting.checked);
-    //    console.log(localStorage.getItem('poisonSetting'));
-    //};
-    //    
-    //mirrorSetting.onchange = function() {
-    //    localStorage.setItem('mirrorSetting', mirrorSetting.checked);
-    //    console.log(localStorage.getItem('mirrorSetting'));
-    //};
-    //    
-    //if (localStorage.getItem('mirrorSetting') == 'true') {
-    //    console.log('TEST');
-    //};
+        localStorage['settingList'] = JSON.stringify(settingIDs);
+
+        console.log(settingIDs);
+        console.log(localStorage['settingList']);
+    });
+
+    // Implement changes based on settings.
+    if (localStorage.getItem('mirrorSetting') == 'true') {
+        $('.player-one').addClass('mirror-mode');
+    } else if (localStorage.getItem('mirrorSetting') == 'false') {
+        $('.player-one').removeClass('mirror-mode');
+    }
+
+    // Implement switchery.
+    var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+    elems.forEach(function(html) {
+        var switchery = new Switchery(html);
+    });
 
     // Define variables.
     var $allCounters = $('.counter');
 
     // Select counter.
-    $allCounters.click(function () {
+    $allCounters.click(function() {
         $allCounters.removeClass('active');
         $(this).addClass('active');
     });
 
     // Set up player one counter controls.
-    $('#playerOneAdd').click(function () {
+    $('#playerOneAdd').click(function() {
         if ($('#playerOneLife').hasClass('active')) {
             var playerOneLife = localStorage.getItem('playerOneLife');
             playerOneLife++;
@@ -122,7 +129,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#playerOneSub').click(function () {
+    $('#playerOneSub').click(function() {
         if ($('#playerOneLife').hasClass('active')) {
             var playerOneLife = localStorage.getItem('playerOneLife');
             playerOneLife--;
@@ -142,7 +149,7 @@ $(document).ready(function () {
     });
 
     // Set up player two counter controls.
-    $('#playerTwoAdd').click(function () {
+    $('#playerTwoAdd').click(function() {
         if ($('#playerTwoLife').hasClass('active')) {
             var playerTwoLife = localStorage.getItem('playerTwoLife');
             playerTwoLife++;
@@ -161,7 +168,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#playerTwoSub').click(function () {
+    $('#playerTwoSub').click(function() {
         if ($('#playerTwoLife').hasClass('active')) {
             var playerTwoLife = localStorage.getItem('playerTwoLife');
             playerTwoLife--;
@@ -181,7 +188,7 @@ $(document).ready(function () {
     });
 
     // Allow user to reset counters.
-    $('#resetButton').click(function () {
+    $('#resetButton').click(function() {
         var lifeTotal = 20;
         var zero = 0;
 
