@@ -49,12 +49,42 @@ function pageSetup() {
         $('.playerTwoPoisonNum').html(0);
     }
 
-    // MAKE CHANGES BASED ON SETTINGS
-    if ($('#mirror').is(':checked')) {
-        localStorage.setItem('mirrorSetting', true);
-    } else {
-        localStorage.setItem('mirrorSetting', false);
-    };
+    // Implement changes based on settings.
+    if (localStorage.getItem('mirrorSetting') == 'true') {
+        $('.player-one').addClass('mirror-mode');
+    } else if (localStorage.getItem('mirrorSetting') == 'false') {
+        $('.player-one').removeClass('mirror-mode');
+    }
+
+    if (localStorage.getItem('poisonSetting') == 'true') {
+        $('#playerOnePoison').show();
+        $('#playerTwoPoison').show();
+    } else if (localStorage.getItem('poisonSetting') == 'false') {
+        $('#playerOnePoison').hide();
+        $('#playerTwoPoison').hide();
+    }
+
+    if (localStorage.getItem('generalSetting') == 'true') {
+        $('#playerOneGeneral').show();
+        $('#playerTwoGeneral').show();
+    } else if (localStorage.getItem('generalSetting') == 'false') {
+        $('#playerOneGeneral').hide();
+        $('#playerTwoGeneral').hide();
+    }
+
+    // Format counters.
+    if ($('#playerOnePoison').is(':hidden') && $('#playerOneGeneral').is(':hidden')) {
+        $('#playerOneLife').addClass('show-life');
+        $('#playerTwoLife').addClass('show-life');
+    } else if ($('#playerOnePoison').is(':hidden')) {
+        $('#playerOneGeneral').addClass('show-life-general');
+        $('#playerTwoGeneral').addClass('show-life-general');
+    } else if ($('#playerOneGeneral').is(':hidden')) {
+        $('#playerOneLife').addClass('show-life-poison');
+        $('#playerTwoLife').addClass('show-life-poison');
+    }
+
+    console.log('pagesetup called');
 }
 
 // Define function to change page.
@@ -62,8 +92,33 @@ function changePage(page) {
     location.href = page;
 }
 
+function updateSettings() {
+    // MAKE CHANGES BASED ON SETTINGS
+    if ($('#mirror').is(':checked')) {
+        localStorage.setItem('mirrorSetting', true);
+    } else {
+        localStorage.setItem('mirrorSetting', false);
+    };
+
+    if ($('#poison').is(':checked')) {
+        localStorage.setItem('poisonSetting', true);
+    } else {
+        localStorage.setItem('poisonSetting', false);
+    };
+
+    if ($('#general').is(':checked')) {
+        localStorage.setItem('generalSetting', true);
+    } else {
+        localStorage.setItem('generalSetting', false);
+    };
+    console.log('updatesettings called');
+}
+
 // Call functions when page loads.
 $(document).ready(function() {
+
+    // Setup audio variable for sound effect triggers.
+    var audio = document.getElementById('audio');
 
     // Save switch settings.
     var settingList = (localStorage["settingList"]) ? JSON.parse(localStorage["settingList"]) : [];
@@ -93,13 +148,6 @@ $(document).ready(function() {
         var switchery = new Switchery(html);
     });
 
-    // Implement changes based on settings.
-    if (localStorage.getItem('mirrorSetting') == 'true') {
-        $('.player-one').addClass('mirror-mode')
-    } else if (localStorage.getItem('mirrorSetting') == 'false') {
-        $('.player-one').removeClass('mirror-mode');
-    }
-
     // Define variables.
     var $allCounters = $('.counter');
 
@@ -116,16 +164,19 @@ $(document).ready(function() {
             playerOneLife++;
             $('.playerOneLifeNum').html(playerOneLife);
             localStorage.setItem('playerOneLife', playerOneLife);
+            audio.play();
         } else if ($('#playerOneGeneral').hasClass('active')) {
             var playerOneGeneral = localStorage.getItem('playerOneGeneral');
             playerOneGeneral++;
             $('.playerOneGeneralNum').html(playerOneGeneral);
             localStorage.setItem('playerOneGeneral', playerOneGeneral);
+            audio.play();
         } else if ($('#playerOnePoison').hasClass('active')) {
             var playerOnePoison = localStorage.getItem('playerOnePoison');
             playerOnePoison++;
             $('.playerOnePoisonNum').html(playerOnePoison);
             localStorage.setItem('playerOnePoison', playerOnePoison);
+            audio.play();
         }
     });
 
@@ -135,16 +186,19 @@ $(document).ready(function() {
             playerOneLife--;
             $('.playerOneLifeNum').html(playerOneLife);
             localStorage.setItem('playerOneLife', playerOneLife);
+            audio.play();
         } else if ($('#playerOneGeneral').hasClass('active')) {
             var playerOneGeneral = localStorage.getItem('playerOneGeneral');
             playerOneGeneral--;
             $('.playerOneGeneralNum').html(playerOneGeneral);
             localStorage.setItem('playerOneGeneral', playerOneGeneral);
+            audio.play();
         } else if ($('#playerOnePoison').hasClass('active')) {
             var playerOnePoison = localStorage.getItem('playerOnePoison');
             playerOnePoison--;
             $('.playerOnePoisonNum').html(playerOnePoison);
             localStorage.setItem('playerOnePoison', playerOnePoison);
+            audio.play();
         }
     });
 
@@ -155,16 +209,19 @@ $(document).ready(function() {
             playerTwoLife++;
             $('.playerTwoLifeNum').html(playerTwoLife);
             localStorage.setItem('playerTwoLife', playerTwoLife);
+            audio.play();
         } else if ($('#playerTwoGeneral').hasClass('active')) {
             var playerTwoGeneral = localStorage.getItem('playerTwoGeneral');
             playerTwoGeneral++;
             $('.playerTwoGeneralNum').html(playerTwoGeneral);
             localStorage.setItem('playerTwoGeneral', playerTwoGeneral);
+            audio.play();
         } else if ($('#playerTwoPoison').hasClass('active')) {
             var playerTwoPoison = localStorage.getItem('playerTwoPoison');
             playerTwoPoison++;
             $('.playerTwoPoisonNum').html(playerTwoPoison);
             localStorage.setItem('playerTwoPoison', playerTwoPoison);
+            audio.play();
         }
     });
 
@@ -174,21 +231,25 @@ $(document).ready(function() {
             playerTwoLife--;
             $('.playerTwoLifeNum').html(playerTwoLife);
             localStorage.setItem('playerTwoLife', playerTwoLife);
+            audio.play();
         } else if ($('#playerTwoGeneral').hasClass('active')) {
             var playerTwoGeneral = localStorage.getItem('playerTwoGeneral');
             playerTwoGeneral--;
             $('.playerTwoGeneralNum').html(playerTwoGeneral);
             localStorage.setItem('playerTwoGeneral', playerTwoGeneral);
+            audio.play();
         } else if ($('#playerTwoPoison').hasClass('active')) {
             var playerTwoPoison = localStorage.getItem('playerTwoPoison');
             playerTwoPoison--;
             $('.playerTwoPoisonNum').html(playerTwoPoison);
             localStorage.setItem('playerTwoPoison', playerTwoPoison);
+            audio.play();
         }
     });
 
     // Allow user to reset counters.
     $('#resetButton').click(function() {
+        $allCounters.removeClass('active');
         var lifeTotal = 20;
         var zero = 0;
 

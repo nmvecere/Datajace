@@ -106,14 +106,14 @@ input {
     border-top: 1px solid #bdc3c7;
     color: #bdc3c7;
     font-size: 18px;
-    margin: 0 20px 15px 0px;
     text-align: left;
     width: 60px;
 }
 
 .button-container {
-    padding: 35px 0 0 0;
+    padding-top: 15px;
     text-align: center;
+    clear: both;
 }
 
 .add-button, .subtract-button {
@@ -187,6 +187,18 @@ input {
 .active {
     color: #3498db;
     font-weight: 600;
+}
+
+.show-life {
+    padding-left: 100px;
+}
+
+.show-life-general {
+    padding-left: 48px;
+}
+
+.show-life-poison {
+    padding-left: 48px;
 }
 
 /* iPhone 4 Portrait */
@@ -301,11 +313,10 @@ input {
     }
     .label {
         font-size: 30px;
-        margin: 0 10px 15px 10px;
         width: 135px;
     }
     .button-container {
-        padding: 35px 0px 50px;
+        padding-bottom: 50px;
         text-align: center;
     }
     .add-button, .subtract-button {
@@ -348,6 +359,15 @@ input {
     }
     .switchery {
         margin-top: -39px;
+    }
+    .show-life {
+        padding-left: 250px;
+    }
+    .show-life-general {
+        padding-left: 133px;
+    }
+    .show-life-poison {
+        padding-left: 133px;
     }
 }
 
