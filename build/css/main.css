@@ -1,34 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900);
 
-@media only screen and (max-width: 320px) {
-    .counter-wrapper, .settings-wrapper {
-        display: block;
-    }
-    .landscape-wrapper {
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 321px) {
-    .counter-wrapper, .settings-wrapper {
-        display: none;
-    }
-    .orientation-notice {
-        background: #ecf0f1;
-        color: #3498db;
-        display: block;
-        font-size: 20px;
-        font-weight: 600;
-        height: 256px;
-        padding: 0;
-        text-align: center;
-    }
-    .landscape-wrapper img {
-        height: 180px;
-        padding-top: 10px;
-    }
-}
-
 * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-select: none;
@@ -74,7 +45,6 @@ h1 {
 .player {
 	color: #ecf0f1;
 	background: #ecf0f1;
-    height: 194px;
 }
 
 .player-name {
@@ -139,11 +109,6 @@ input {
     margin: 0 20px 15px 0px;
     text-align: left;
     width: 60px;
-}
-
-.label-container {
-    clear: both;
-    font-size: 16px;
 }
 
 .button-container {
@@ -222,4 +187,187 @@ input {
 .active {
     color: #3498db;
     font-weight: 600;
+}
+
+/* iPhone 4 Portrait */
+@media only screen and (max-width: 320px) and (max-height: 480px) {
+    .counter-wrapper, .settings-wrapper {
+        display: block;
+    }
+    .landscape-wrapper {
+        display: none;
+    }
+    .player {
+        height: 194px;
+    }
+}
+
+/* iPhone 4 Landscape */
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+    .counter-wrapper, .settings-wrapper {
+        display: none;
+    }
+    .orientation-notice {
+        background: #ecf0f1;
+        color: #3498db;
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        height: 256px;
+        padding: 0;
+        text-align: center;
+    }
+    .landscape-wrapper img {
+        height: 180px;
+        padding-top: 10px;
+    }
+}
+
+/* iPhone 5 Portrait */
+@media only screen and (max-width: 320px) and (min-height: 481px) and (max-height: 568px) {
+    .counter-wrapper, .settings-wrapper {
+        display: block;
+    }
+    .landscape-wrapper {
+        display: none;
+    }
+    .player {
+        padding-top: 20px;
+        height: 215.5px;
+    }
+    #player-two {
+        padding-top: 25px;
+    }
+    .settings-wrapper {
+        height: 548px;
+    }
+}
+
+/* iPhone 5 Landscape */
+@media only screen and (min-width: 481px) and (max-width: 568px) and (max-height: 568px) {
+    .counter-wrapper, .settings-wrapper {
+        display: none;
+    }
+    .orientation-notice {
+        background: #ecf0f1;
+        color: #3498db;
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        height: 256px;
+        padding: 0;
+        text-align: center;
+    }
+    .landscape-wrapper img {
+        height: 180px;
+        padding-top: 10px;
+    }
+}
+
+/* iPad 1-5/Mini Portrait */
+@media only screen and (max-width: 768px) and (min-height: 569px) and (max-height: 1024px) {
+    .counter-wrapper, .settings-wrapper {
+        display: block;
+    }
+    .landscape-wrapper {
+        display: none;
+    }
+    h1 {
+        font-size: 25px;
+    }
+    .player {
+        padding-top: 10px;
+        height: 436px;
+    }
+    .player-name {
+        font-size: 25px;
+        margin-left: 20px;
+        margin-top: 20px;
+        width: 708px;
+    }
+    #player-two {
+        padding-top: 20px;
+    }
+    .counter-container {
+        color: #3498db;
+        font-size: 60px;
+        margin: 20px 0px;
+        padding-top: 20px;
+        width: 758px;
+    }
+    .counter {
+        margin: 0 58px;
+        padding-bottom: 50px;
+    }
+    .label {
+        font-size: 30px;
+        margin: 0 10px 15px 10px;
+        width: 135px;
+    }
+    .button-container {
+        padding: 35px 0px 50px;
+        text-align: center;
+    }
+    .add-button, .subtract-button {
+        border: none;
+        height: 44px;
+        margin: 0 50px;
+        width: 44px;
+    }
+    .subtract-button {
+        background: url(../img/ipad-subtract-button.svg);
+        height: 88px;
+        width: 88px;
+    }
+    .add-button {
+        background: url(../img/ipad-add-button.svg);
+        height: 88px;
+        width: 88px;
+    }
+    .reset-button {
+        background: url(../img/ipad-reset-button.svg) no-repeat center;
+        height: 60px;
+        width: 60px;
+    }
+    .divider {
+        height: 60px;
+    }
+    .settings-wrapper {
+        height: 1004px;
+    }
+    .setting-label {
+        font-size: 25px;
+    }
+
+    .setting-option {
+        background: #ecf0f1;
+        border-bottom: 1px solid #bdc3c7;
+        color: #7f8c8d;
+        padding: 10px 15px 10px 15px;
+        font-size: 20px;
+    }
+    .switchery {
+        margin-top: -39px;
+    }
+}
+
+/* iPad 1-5/Mini Landscape */
+@media only screen and (max-height: 768px) and (min-width: 569px) and (max-width: 1024px) {
+    .counter-wrapper, .settings-wrapper {
+        display: none;
+    }
+    .orientation-notice {
+        background: #ecf0f1;
+        color: #3498db;
+        display: block;
+        font-size: 20px;
+        font-weight: 600;
+        height: 704px;
+        padding: 0;
+        text-align: center;
+    }
+    .landscape-wrapper img {
+        height: 616px;
+        padding-top: 10px;
+    }
 }

@@ -65,7 +65,7 @@ function changePage(page) {
 // Call functions when page loads.
 $(document).ready(function() {
 
-    // SAVE SETTINGS
+    // Save switch settings.
     var settingList = (localStorage["settingList"]) ? JSON.parse(localStorage["settingList"]) : [];
 
     $("input[type='checkbox']").each(function() {
@@ -86,19 +86,19 @@ $(document).ready(function() {
         console.log(localStorage['settingList']);
     });
 
-    // Implement changes based on settings.
-    if (localStorage.getItem('mirrorSetting') == 'true') {
-        $('.player-one').addClass('mirror-mode');
-    } else if (localStorage.getItem('mirrorSetting') == 'false') {
-        $('.player-one').removeClass('mirror-mode');
-    }
-
     // Implement switchery.
     var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
     elems.forEach(function(html) {
         var switchery = new Switchery(html);
     });
+
+    // Implement changes based on settings.
+    if (localStorage.getItem('mirrorSetting') == 'true') {
+        $('.player-one').addClass('mirror-mode')
+    } else if (localStorage.getItem('mirrorSetting') == 'false') {
+        $('.player-one').removeClass('mirror-mode');
+    }
 
     // Define variables.
     var $allCounters = $('.counter');
