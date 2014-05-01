@@ -51,7 +51,7 @@ function pageSetup() {
         $('.playerTwoPoisonNum').html(0);
     }
 
-    // Implement display changes based on settings.
+    // Change display based on settings.
     if (localStorage.getItem('mirrorSetting') == 'true') {
         $('.player-one').addClass('mirror-mode');
     } else if (localStorage.getItem('mirrorSetting') == 'false') {
@@ -130,7 +130,7 @@ $(document).ready(function() {
         }
     });
 
-    // Save user settings when switches are activated.
+    // Save user settings whenever switches are activated.
     $("input[type='checkbox']").change(function() {
         var settingIDs = $("input:checkbox:checked").map(function() {
             return $(this).val();
@@ -231,7 +231,7 @@ $(document).ready(function() {
         }
     });
 
-    // Reset counter values when the user presses the reset icon.
+    // Reset counter values when user presses reset button.
     $('#resetButton').click(function() {
         $allCounters.removeClass('active');
         var lifeTotal = 20;
