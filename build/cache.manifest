@@ -1,0 +1,37 @@
+CACHE MANIFEST
+# 2010-06-18:v3
+
+# HTML
+index.html
+
+# CSS
+css/normalize.css
+css/jquery.mobile-1.4.2.min.css
+css/add-to-home.css
+css/switchery.min.css
+css/main.css
+
+# JS
+js/jquery-1.11.0.min.js
+js/jquery.mobile-1.4.2.min.js
+js/add-to-home.min.js
+js/switchery.min.js
+js/main.js
+
+# IMGS
+img/app-logo.png
+img/icon-114x114.png
+img/icon-57x57.png
+img/ipad-add-button.svg
+img/ipad-reset-button.svg
+img/ipad-subtract-button.svg
+img/iphone-add-button.svg
+img/iphone-back-button.svg
+img/iphone-divider.svg
+img/iphone-reset-button.svg
+img/iphone-settings-button.svg
+img/iphone-settings-option-button.svg
+img/iphone-subtract-button.svg
+img/startup-320x460.png
+img/startup-640x1096.png
+img/startup-640x920.png
