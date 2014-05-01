@@ -1,8 +1,8 @@
-// Check if local storage variables are set.
-// If not, set them.
 function pageSetup() {
     updateSettings();
 
+    // Check if local storage variables are set.
+    // If not, set them.
     if (window.localStorage.getItem('playerOneLife') !== null && window.localStorage !== null) {
         var playerOneLife = localStorage.getItem('playerOneLife');
         $('.playerOneLifeNum').html(playerOneLife);
@@ -51,7 +51,7 @@ function pageSetup() {
         $('.playerTwoPoisonNum').html(0);
     }
 
-    // Implement changes based on settings.
+    // Implement display changes based on settings.
     if (localStorage.getItem('mirrorSetting') == 'true') {
         $('.player-one').addClass('mirror-mode');
     } else if (localStorage.getItem('mirrorSetting') == 'false') {
@@ -74,7 +74,7 @@ function pageSetup() {
         $('#playerTwoGeneral').show();
     }
 
-    // Format counters.
+    // Reset life counter format for both players.
     $('#playerOneLife').removeClass();
     $('#playerOneGeneral').removeClass();
     $('#playerOneLife').addClass('counter');
@@ -84,6 +84,8 @@ function pageSetup() {
     $('#playerTwoGeneral').removeClass();
     $('#playerTwoLife').addClass('counter');
     $('#playerTwoGeneral').addClass('counter');
+
+    // Display appropriate counters based on user settings.
     if (($('#playerOnePoison').css('display') == 'none') && $('#playerOneGeneral').css('display') == 'none') {
         $('#playerOneLife').addClass('show-life');
         $('#playerTwoLife').addClass('show-life');
@@ -96,8 +98,8 @@ function pageSetup() {
     }
 }
 
+// Update variables based on user settings.
 function updateSettings() {
-    // Make changes based on settings.
     if ($('#mirror').is(':checked')) {
         localStorage.setItem('mirrorSetting', true);
     } else {
@@ -117,15 +119,9 @@ function updateSettings() {
     };
 }
 
-// Call functions when page loads.
 $(document).ready(function() {
 
-    // Setup audio variable for sound effect triggers.
-    var buttonSound = document.getElementById('button');
-    var swipeSound = document.getElementById('swipe');
-    var switchSound = document.getElementById('switch');
-
-    // Save switch settings.
+    // Save initial user settings.
     var settingList = (localStorage["settingList"]) ? JSON.parse(localStorage["settingList"]) : [];
 
     $("input[type='checkbox']").each(function() {
@@ -134,8 +130,8 @@ $(document).ready(function() {
         }
     });
 
+    // Save user settings when switches are activated.
     $("input[type='checkbox']").change(function() {
-
         var settingIDs = $("input:checkbox:checked").map(function() {
             return $(this).val();
         }).get();
@@ -143,37 +139,19 @@ $(document).ready(function() {
         localStorage['settingList'] = JSON.stringify(settingIDs);
     });
 
-    // Implement switchery.
+    // Initialize Switchery switches.
     var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
 
     elems.forEach(function(html) {
         var switchery = new Switchery(html);
     });
 
-    // Define variables.
+    // Highlight selected counter.
     var $allCounters = $('.counter');
-
-    // Select counter.
     $allCounters.click(function() {
         $allCounters.removeClass('active');
         $(this).addClass('active');
     });
-
-    // Sound activation.
-    $('.back-button').click(function() {
-        swipeSound.play();
-    });
-    $('.settings-button').click(function() {
-        swipeSound.play();
-    });
-
-    $("input[type='checkbox']").change(function() {
-        switchSound.play();
-    });
-
-    $('.reset-button').click(function() {
-        buttonSound.play();
-    })
 
     // Set up player one counter controls.
     $('#playerOneAdd').click(function() {
@@ -182,19 +160,16 @@ $(document).ready(function() {
             playerOneLife++;
             $('.playerOneLifeNum').html(playerOneLife);
             localStorage.setItem('playerOneLife', playerOneLife);
-            buttonSound.play();
         } else if ($('#playerOneGeneral').hasClass('active')) {
             var playerOneGeneral = localStorage.getItem('playerOneGeneral');
             playerOneGeneral++;
             $('.playerOneGeneralNum').html(playerOneGeneral);
             localStorage.setItem('playerOneGeneral', playerOneGeneral);
-            buttonSound.play();
         } else if ($('#playerOnePoison').hasClass('active')) {
             var playerOnePoison = localStorage.getItem('playerOnePoison');
             playerOnePoison++;
             $('.playerOnePoisonNum').html(playerOnePoison);
             localStorage.setItem('playerOnePoison', playerOnePoison);
-            buttonSound.play();
         }
     });
 
@@ -204,19 +179,16 @@ $(document).ready(function() {
             playerOneLife--;
             $('.playerOneLifeNum').html(playerOneLife);
             localStorage.setItem('playerOneLife', playerOneLife);
-            buttonSound.play();
         } else if ($('#playerOneGeneral').hasClass('active')) {
             var playerOneGeneral = localStorage.getItem('playerOneGeneral');
             playerOneGeneral--;
             $('.playerOneGeneralNum').html(playerOneGeneral);
             localStorage.setItem('playerOneGeneral', playerOneGeneral);
-            buttonSound.play();
         } else if ($('#playerOnePoison').hasClass('active')) {
             var playerOnePoison = localStorage.getItem('playerOnePoison');
             playerOnePoison--;
             $('.playerOnePoisonNum').html(playerOnePoison);
             localStorage.setItem('playerOnePoison', playerOnePoison);
-            buttonSound.play();
         }
     });
 
@@ -227,19 +199,16 @@ $(document).ready(function() {
             playerTwoLife++;
             $('.playerTwoLifeNum').html(playerTwoLife);
             localStorage.setItem('playerTwoLife', playerTwoLife);
-            buttonSound.play();
         } else if ($('#playerTwoGeneral').hasClass('active')) {
             var playerTwoGeneral = localStorage.getItem('playerTwoGeneral');
             playerTwoGeneral++;
             $('.playerTwoGeneralNum').html(playerTwoGeneral);
             localStorage.setItem('playerTwoGeneral', playerTwoGeneral);
-            buttonSound.play();
         } else if ($('#playerTwoPoison').hasClass('active')) {
             var playerTwoPoison = localStorage.getItem('playerTwoPoison');
             playerTwoPoison++;
             $('.playerTwoPoisonNum').html(playerTwoPoison);
             localStorage.setItem('playerTwoPoison', playerTwoPoison);
-            buttonSound.play();
         }
     });
 
@@ -249,44 +218,40 @@ $(document).ready(function() {
             playerTwoLife--;
             $('.playerTwoLifeNum').html(playerTwoLife);
             localStorage.setItem('playerTwoLife', playerTwoLife);
-            buttonSound.play();
         } else if ($('#playerTwoGeneral').hasClass('active')) {
             var playerTwoGeneral = localStorage.getItem('playerTwoGeneral');
             playerTwoGeneral--;
             $('.playerTwoGeneralNum').html(playerTwoGeneral);
             localStorage.setItem('playerTwoGeneral', playerTwoGeneral);
-            buttonSound.play();
         } else if ($('#playerTwoPoison').hasClass('active')) {
             var playerTwoPoison = localStorage.getItem('playerTwoPoison');
             playerTwoPoison--;
             $('.playerTwoPoisonNum').html(playerTwoPoison);
             localStorage.setItem('playerTwoPoison', playerTwoPoison);
-            buttonSound.play();
         }
     });
 
-    // Allow user to reset counters.
+    // Reset counter values when the user presses the reset icon.
     $('#resetButton').click(function() {
         $allCounters.removeClass('active');
         var lifeTotal = 20;
-        var zero = 0;
 
         $('.playerOneLifeNum').html(lifeTotal);
         localStorage.setItem('playerOneLife', lifeTotal);
 
-        $('.playerOneGeneralNum').html(zero);
-        localStorage.setItem('playerOneGeneral', zero);
+        $('.playerOneGeneralNum').html(0);
+        localStorage.setItem('playerOneGeneral', 0);
 
-        $('.playerOnePoisonNum').html(zero);
-        localStorage.setItem('playerOnePoison', zero);
+        $('.playerOnePoisonNum').html(0);
+        localStorage.setItem('playerOnePoison', 0);
 
         $('.playerTwoLifeNum').html(lifeTotal);
         localStorage.setItem('playerTwoLife', lifeTotal);
 
-        $('.playerTwoGeneralNum').html(zero);
-        localStorage.setItem('playerTwoGeneral', zero);
+        $('.playerTwoGeneralNum').html(0);
+        localStorage.setItem('playerTwoGeneral', 0);
 
-        $('.playerTwoPoisonNum').html(zero);
-        localStorage.setItem('playerTwoPoison', zero);
+        $('.playerTwoPoisonNum').html(0);
+        localStorage.setItem('playerTwoPoison', 0);
     });
 });
