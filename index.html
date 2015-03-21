@@ -1,141 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- <html lang="en" manifest="cache.manifest"> -->
 
-<head>
-    <title>Datajace</title>
-    <!-- META -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <head>
+        <title>Datajace</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
-    <link rel="stylesheet" href="css/add-to-home.css">
-    <link rel="stylesheet" href="css/switchery.min.css">
-    <link rel="stylesheet" href="css/main.css">
+        <!-- META -->
+        <meta
+            charset="utf-8">
+        <meta
+            name="viewport"
+            content="initial-scale=1.0,
+                     user-scalable=no,
+                     width=device-width,
+                     maximum-scale=1.0">
+        <meta
+            name="apple-mobile-web-app-capable"
+            content="yes">
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black">
 
-    <!-- iPhone Icon -->
-    <link rel="apple-touch-icon" href="img/icon-57x57.png" sizes="57x57">
-    <link rel="apple-touch-icon" href="img/icon-114x114.png" sizes="114x114">
+        <!-- CSS -->
+        <link
+            rel="stylesheet"
+            href="css/reset.css" />
+        <link
+            rel="stylesheet"
+            href="css/jquery.mobile-1.4.5.min.css" />
+        <link
+            rel="stylesheet"
+            href="css/switchery.min.css">
+        <link
+            rel="stylesheet"
+            href="css/main.css">
 
-    <!-- iPhone Splash -->
-    <link
-        rel="apple-touch-startup-image"
-        href="img/startup-320x460.png"
-        media="(device-width: 320px)">
+        <!-- iPhone Icon -->
+        <link
+            rel="apple-touch-icon"
+            href="img/icon-57x57.png"
+            sizes="57x57">
+        <link
+            rel="apple-touch-icon"
+            href="img/icon-114x114.png"
+            sizes="114x114">
 
-    <!-- iPhone 4 Splash -->
-    <link
-        rel="apple-touch-startup-image"
-        href="img/startup-640x920.png"
-        media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2.0)">
+        <!-- iPhone Splash -->
+        <link
+            rel="apple-touch-startup-image"
+            href="img/startup-320x460.png"
+            media="(device-width: 320px)">
 
-    <!-- iPhone 5 Splash -->
-    <link
-        rel="apple-touch-startup-image"
-        href="img/startup-640x1096.png"
-        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2.0)">
-        
-</head>
+        <!-- iPhone 4 Splash -->
+        <link
+            rel="apple-touch-startup-image"
+            href="img/startup-640x920.png"
+            media="(device-width: 320px)
+                    and (device-height: 480px)
+                    and (-webkit-device-pixel-ratio: 2.0)">
 
-<body class="container" data-role="none" onload="pageSetup();">
-    <div data-role="page" id="page-one" class="counter-wrapper">
-        <header>
-            <div class="nav-bar">
-                <h1>Datajace</h1>
-                <a href="#page-two" data-transition="slide" class="settings-button"><img src="img/iphone-settings-button.svg"></a>
+        <!-- iPhone 5 Splash -->
+        <link
+            rel="apple-touch-startup-image"
+            href="img/startup-640x1096.png"
+            media="(device-width: 320px)
+                    and (device-height: 568px)
+                    and (-webkit-device-pixel-ratio: 2.0)">
+    </head>
+
+    <body class="container" data-role="none">
+        <div data-role="page" id="page-one" class="counter-wrapper">
+            <header>
+                <div class="nav-bar">
+                    <h1>Datajace</h1>
+                    <a href="#page-two" data-transition="slide" class="settings-button"><img src="img/iphone-settings-button.svg"></a>
+                </div>
+            </header>
+
+            <div class="player player-one">
+                <input data-role="none" type="text" name="player-name" placeholder="Player 1" class="player-name">
+
+                <div class="counter-container">
+                    <div class="counter" id="playerOneGeneral">
+                        <div class="playerOneGeneralNum"></div>
+                        <div class="label">General</div>
+                    </div>
+                    <div class="counter" id="playerOneLife">
+                        <div class="playerOneLifeNum"></div>
+                        <div class="label">Life</div>
+                    </div>
+                    <div class="counter" id="playerOnePoison">
+                        <div class="playerOnePoisonNum"></div>
+                        <div class="label">Poison</div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button type="button" data-role="none" class="subtract-button" id="playerOneSub"></button>
+                    <button type="button" data-role="none" class="add-button" id="playerOneAdd"></button>
+                </div>
             </div>
-        </header>
-        <div class="player player-one">
-            <input data-role="none" type="text" name="player-name" placeholder="Player 1" class="player-name"></input>
-            <div class="counter-container">
-                <div class="counter" id="playerOneGeneral">
-                    <div class="playerOneGeneralNum"></div>
-                    <div class="label">General</div>
-                </div>
-                <div class="counter" id="playerOneLife">
-                    <div class="playerOneLifeNum"></div>
-                    <div class="label">Life</div>
-                </div>
-                <div class="counter" id="playerOnePoison">
-                    <div class="playerOnePoisonNum"></div>
-                    <div class="label">Poison</div>
-                </div>
+
+            <div class="divider">
+                <button type="button" data-role="none" id="resetButton" class="reset-button"></button>
             </div>
-            <div class="button-container">
-                <button type="button" data-role="none" class="subtract-button" id="playerOneSub"></button>
-                <button type="button" data-role="none" class="add-button" id="playerOneAdd"></button>
+
+            <div class="player" id="player-two">
+                <input type="text" data-role="none" name="player-name" placeholder="Player 2" class="player-name">
+
+                <div class="counter-container">
+                    <div class="counter" id="playerTwoGeneral">
+                        <div class="playerTwoGeneralNum"></div>
+                        <div class="label">General</div>
+                    </div>
+
+                    <div class="counter" id="playerTwoLife">
+                        <div class="playerTwoLifeNum"></div>
+                        <div class="label">Life</div>
+                    </div>
+
+                    <div class="counter" id="playerTwoPoison">
+                        <div class="playerTwoPoisonNum"></div>
+                        <div class="label">Poison</div>
+                    </div>
+                </div>
+
+                <div class="button-container">
+                    <button type="button" data-role="none" class="subtract-button" id="playerTwoSub"></button>
+                    <button type="button" data-role="none" class="add-button" id="playerTwoAdd"></button>
+                </div>
             </div>
         </div>
-        <div class="divider">
-            <button type="button" data-role="none" id="resetButton" class="reset-button"></button>
-        </div>
-        <div class="player" id="player-two">
-            <input type="text" data-role="none" name="player-name" placeholder="Player 2" class="player-name"></input>
-            <div class="counter-container">
-                <div class="counter" id="playerTwoGeneral">
-                    <div class="playerTwoGeneralNum"></div>
-                    <div class="label">General</div>
-                </div>
-                <div class="counter" id="playerTwoLife">
-                    <div class="playerTwoLifeNum"></div>
-                    <div class="label">Life</div>
-                </div>
-                <div class="counter" id="playerTwoPoison">
-                    <div class="playerTwoPoisonNum"></div>
-                    <div class="label">Poison</div>
-                </div>
-            </div>
-            <div class="button-container">
-                <button type="button" data-role="none" class="subtract-button" id="playerTwoSub"></button>
-                <button type="button" data-role="none" class="add-button" id="playerTwoAdd"></button>
-            </div>
-        </div>
-    </div>
 
-    <div data-role="page" id="page-two" data-role="none" class="settings-wrapper">
-        <header>
-            <div class="nav-bar">
-                <h1>Settings</h1>
-                <!-- <button data-role="button" type="button" data-direction="reverse" name="back-button" class="back-button" onclick="changePage('index.html')"></button> -->
-                <a href="#page-one" data-direction="reverse" class="back-button" data-transition="slide" onClick="pageSetup();"><img src="img/iphone-back-button.svg" /></a>
+        <div data-role="page" id="page-two" data-role="none">
+            <header>
+                <div class="nav-bar">
+                    <h1>Settings</h1>
+                    <a href="#page-one" data-direction="reverse" class="back-button" data-transition="slide" onClick="pageSetup();"><img src="img/iphone-back-button.svg" /></a>
+                </div>
+            </header>
+
+            <div class="settings-wrapper">
+                <div class="setting-label" data-role="none">Display</div>
+
+                <form data-role="none">
+                    <div class="setting-option">General Counter</div><input type="checkbox" data-role="none" name="setting" id="general" value="general" class="checkbox js-switch" />
+                    <div class="setting-option">Poison Counter</div><input type="checkbox" data-role="none" name="setting" id="poison" value="poison" class="checkbox js-switch" />
+                    <div class="setting-option">Mirror Mode</div><input type="checkbox" data-role="none" name="setting" id="mirror" value="mirror" class="checkbox js-switch" />
+                </form>
             </div>
-        </header>
-        <div class="setting-label" data-role="none">Display</div>
-        <form data-role="none">
-            <div class="setting-option">General Counter</div><input type="checkbox" data-role="none" name="setting" id="general" value="general" class="checkbox js-switch" />
-            <div class="setting-option">Poison Counter</div><input type="checkbox" data-role="none" name="setting" id="poison" value="poison" class="checkbox js-switch" />
-            <div class="setting-option">Mirror Mode</div><input type="checkbox" data-role="none" name="setting" id="mirror" value="mirror" class="checkbox js-switch" />
-        </form>
-    </div>
-    <div class="landscape-wrapper">
-        <header>
-            <div class="nav-bar">
-                <h1>Datajace</h1>
-            </div>
-        </header>
-        <div class="orientation-notice">
-            <img src="img/app-logo.png" /><br />
-            "Clear your mind of idle thoughts... <br />
-            And rotate to portrait mode."
         </div>
-    </div>
-    <!-- Javascript -->
-    <script src="js/refresh-manifest.js" type="text/javascript"></script>
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/jquery.mobile-1.4.2.min.js"></script>
-    <script>
-        // ADD TO HOME CUSTOMIZATION
-        var addToHomeConfig = {
-            touchIcon: true,
-            message: 'Want to install this app on your %device? Tap %icon and then <strong>Add to Home Screen</strong>.'
-        };
-    </script>
-    <script src="js/add-to-home.min.js" type="text/javascript"></script>
-    <script src="js/switchery.min.js" type="text/javascript"></script>
-    <script src="js/main.js"></script>
-</body>
+
+        <div class="landscape-wrapper">
+            <header>
+                <div class="nav-bar">
+                    <h1>Datajace</h1>
+                </div>
+            </header>
+            <div class="orientation-notice">
+                <img src="img/app-logo.png" /><br />
+                "Clear your mind of idle thoughts...<br />
+                And rotate to portrait mode."
+            </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/switchery.min.js" type="text/javascript"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>

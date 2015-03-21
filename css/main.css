@@ -3,16 +3,22 @@
 * {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-select: none;
+    text-shadow: none;
 }
 
 body {
     font-family: 'Source Sans Pro', sans-serif;
+    height: auto;
+}
+
+.ui-icon-loading {
+    background: none;
 }
 
 #page-one, #page-two {
     position: absolute;
-    width: 320px;
-    height: 548px;
+    width   : 320px;
+    height  : 460px;
 }
 
 .landscape-wrapper {
@@ -20,119 +26,119 @@ body {
 }
 
 .nav-bar {
-	background: #3498db;
-	height: 44px;
+    background: #3498db;
+    height    : 44px;
 }
 
 .nav-bar h1 {
-    color: #ecf0f1;
-	margin: 0;
-	padding-top: 10px;
-	text-align: center;
+    color      : #ecf0f1;
+    margin     : 0;
+    padding-top: 10px;
+    text-align : center;
 }
 
 h1 {
-    font-size: 18px;
+    font-size  : 18px;
     font-weight: 600;
-	line-height: 21px;
-    padding: 20px;
+    line-height: 21px;
+    padding    : 20px;
 }
 
 .divider {
     background: #ecf0f1 url(../img/iphone-divider.svg) repeat-x center;
-    height: 30px;
+    height    : 30px;
     text-align: center;
 }
 
 .reset-button {
     /* Add alert */
     background: url(../img/iphone-reset-button.svg) no-repeat center;
-    border: none;
-    height: 30px;
-    width: 30px;
+    border    : none;
+    height    : 30px;
+    width     : 30px;
 }
 
 .player {
-	color: #ecf0f1;
-	background: #ecf0f1;
+    color      : #ecf0f1;
+    background : #ecf0f1;
     padding-top: 20px;
-    height: 215.5px;
+    height     : 215.5px;
 }
 
 .player-name {
-    background: none;
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid #bdc3c7;
-    color: #3498db;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 600;
-    margin-left: 15px;
-    margin-top: 15px;
-    padding: 0 15px 0 0px;
-    width: 275px;
+    background        : none;
+    border            : none;
+    border-radius     : 0;
+    border-bottom     : 1px solid #bdc3c7;
+    color             : #3498db;
+    display           : inline-block;
+    font-size         : 18px;
+    font-weight       : 600;
+    margin-left       : 15px;
+    margin-top        : 15px;
+    padding           : 0 15px 0 0px;
+    width             : 275px;
     -webkit-appearance: none;
 }
 
 textarea:focus, input:focus {
     border-radius: 0;
-    outline: 0;
+    outline      : 0;
 }
 
 input {
-    font-family: 'Source Sans Pro';
+    font-family        : 'Source Sans Pro';
     -webkit-user-select: auto !important;
 }
 
 .mirror-mode {
-    padding-bottom: 10px;
-	transform: rotate(180deg);
-	-ms-transform:rotate(180deg);
-	-webkit-transform:rotate(180deg);
+    padding-bottom   : 10px;
+    transform        : rotate(180deg);
+    -ms-transform    :rotate(180deg);
+    -webkit-transform:rotate(180deg);
 }
 
 #player-two {
-    margin-top: -12px;
+    margin-top    : -12px;
     padding-bottom: 10px;
 }
 
 .counter-container {
-    color: #3498db;
-    font-size: 32px;
+    color      : #3498db;
+    font-size  : 32px;
     font-weight: 300;
-    margin: 20px 15px;
-    text-align: center;
-    width: 310px;
+    margin     : 20px 15px;
+    text-align : center;
+    width      : 310px;
 }
 
 .counter {
-    color: #bdc3c7;
-    float: left;
-    margin: 0 20px;
+    color     : #bdc3c7;
+    float     : left;
+    margin    : 0 20px;
     text-align: center;
-    width: 17.8%;
+    width     : 17.8%;
 }
 
 .label {
     border-top: 1px solid #bdc3c7;
-    color: #bdc3c7;
-    font-size: 18px;
+    color     : #bdc3c7;
+    font-size : 18px;
     text-align: left;
-    width: 60px;
+    width     : 60px;
 }
 
 .button-container {
     padding-top: 15px;
-    text-align: center;
-    clear: both;
+    text-align : center;
+    clear      : both;
 }
 
 .add-button, .subtract-button {
     border: none;
     height: 44px;
     margin: 0 20px;
-    width: 44px;
+    width : 44px;
 }
 
 .subtract-button {
@@ -145,60 +151,59 @@ input {
 
 .settings-button {
     background: url(../img/iphone-settings-button.svg) no-repeat;
-    border: none;
-    float: right;
-    height: 22px;
-    margin: -40px 10px 0 0;
-    padding: 0;
-    width: 22px;
+    border    : none;
+    float     : right;
+    height    : 22px;
+    margin    : -40px 10px 0 0;
+    padding   : 0;
+    width     : 22px;
 }
 
 .back-button {
-    float: left;
+    float     : left;
     background: url(../img/iphone-back-button.svg) no-repeat;
-    border: none;
-    height: 22px;
-    margin: -40px 0 0 10px;
-    width: 22px;
+    border    : none;
+    height    : 22px;
+    margin    : -40px 0 0 10px;
+    width     : 22px;
 }
 
 .settings-wrapper {
-    min-height: 100px !important;
     background: #bdc3c7;
-    height: 460px;
+    height    : 509px;
 }
 
 .setting-label {
-    color: #7f8c8d;
-    font-size: 16px;
+    color         : #7f8c8d;
+    font-size     : 16px;
     text-transform: uppercase;
-    font-weight: 400;
-    padding: 15px 15px 5px 15px;
+    font-weight   : 400;
+    padding       : 15px 15px 5px 15px;
 }
 
 .setting-option {
-    background: #ecf0f1;
+    background   : #ecf0f1;
     border-bottom: 1px solid #bdc3c7;
-    color: #7f8c8d;
-    padding: 10px 15px 10px 15px;
+    color        : #7f8c8d;
+    padding      : 10px 15px 15px 15px;
 }
 
 .settings-option-button {
     background: url(../img/iphone-settings-option-button.svg) no-repeat;
-    border: none;
-    float: right;
-    height: 22px;
-    margin: -32px 20px 0px 0px;
-    width: 36.291px;
+    border    : none;
+    float     : right;
+    height    : 22px;
+    margin    : -32px 20px 0px 0px;
+    width     : 36.291px;
 }
 
 .switchery {
-    float: right;
+    float : right;
     margin: -37px 15px 0px 0px;
 }
 
 .active {
-    color: #3498db;
+    color      : #3498db;
     font-weight: 600;
 }
 
@@ -239,19 +244,19 @@ input {
         display: block;
     }
     .orientation-notice {
-        background: #ecf0f1;
-        color: #3498db;
-        display: block;
-        font-size: 20px;
+        background : #ecf0f1;
+        color      : #3498db;
+        display    : block;
+        font-size  : 20px;
         font-weight: 600;
-        height: 256px;
-        padding: 0;
-        text-align: center;
+        height     : 276px;
+        padding    : 0;
+        text-align : center;
     }
     .landscape-wrapper img {
-        height: 180px;
+        height     : 180px;
         padding-top: 10px;
-    }    
+    }
     .ui-mobile .ui-page-active {
     	display: none;
     }
@@ -270,13 +275,13 @@ input {
     }
     .player {
         padding-top: 20px;
-        height: 215.5px;
+        height     : 215.5px;
     }
     #player-two {
         padding-top: 25px;
     }
     .settings-wrapper {
-        height: 548px;
+        height: 504px;
     }
 }
 
@@ -289,17 +294,17 @@ input {
         display: block;
     }
     .orientation-notice {
-        background: #ecf0f1;
-        color: #3498db;
-        display: block;
-        font-size: 20px;
+        background : #ecf0f1;
+        color      : #3498db;
+        display    : block;
+        font-size  : 20px;
         font-weight: 600;
-        height: 256px;
-        padding: 0;
-        text-align: center;
+        height     : 256px;
+        padding    : 0;
+        text-align : center;
     }
     .landscape-wrapper img {
-        height: 180px;
+        height     : 180px;
         padding-top: 10px;
     }
     .ui-mobile .ui-page-active {
